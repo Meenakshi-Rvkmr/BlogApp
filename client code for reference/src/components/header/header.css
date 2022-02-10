@@ -1,0 +1,53 @@
+.text-img {
+    text-align: left;
+  }
+
+  .banner_main {
+    padding: 90px 0 190px 0;
+  }
+
+  .text-bg {
+    text-align: left;
+  }
+
+  
+  .text-bg h1 {
+    color: darkgoldenrod;
+    font-size: 75px;
+    line-height: 110px;
+    font-weight: bold;
+    text-align: end;
+  }
+  .text-bg h2 {
+    color: whitesmoke;
+    font-size: 55px;
+    line-height: 110px;
+    font-weight: bold;
+  }
+  
+  .text-bg p {
+    color: #fff;
+    font-size: 17px;
+    line-height: 28px;
+    padding: 40px 0;
+  }
+  
+  .text-bg a {
+    font-size: 17px;
+    background-color: #fff;
+    color: #000;
+    padding: 13px 0px;
+    width: 100%;
+    max-width: 190px;
+    text-align: center;
+    display: inline-block;
+    transition: ease-in all 0.5s;
+  }
+  
+  .text-bg a:hover {
+    background-color: teal;
+    color: #000;
+    transition: ease-in all 0.5s;
+    border-radius: 26px;
+  }
+  
