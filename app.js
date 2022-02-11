@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
@@ -13,7 +13,7 @@ const path = require("path");
 app.use(express.static("./build/"));
 
 const MONGO_URL = "mongodb+srv://meenakshi:qazWSX123@cluster0.llhoa.mongodb.net/blog?retryWrites=true&w=majority"
-dotenv.config();
+// dotenv.config();
 app.use(express.json());
 app.use(cors());
 
@@ -37,7 +37,7 @@ app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 app.use("/api/user", userRoute);
 
-app.get("/*", function (req, res) {
+app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname + "./build/index.html"));
 });
 
