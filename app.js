@@ -15,9 +15,19 @@ app.use(express.static("./build/"));
 const MONGO_URL = "mongodb+srv://meenakshi:qazWSX123@cluster0.llhoa.mongodb.net/blog?retryWrites=true&w=majority"
 dotenv.config();
 app.use(express.json());
-app.use(cors())
+app.use(cors());
+
 mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
+}).then((res)=>
+{
+    console.log(`successful connection to BBDD`);
+   //console.log(res);
+
+})
+.catch((error)=>{
+
+    console.log("error"+error.message);
 });
 
 
