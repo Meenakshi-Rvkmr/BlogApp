@@ -38,7 +38,7 @@ app.use("/api/categories", categoryRoute);
 app.use("/api/user", userRoute);
 
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname + "./build/index.html"));
+  res.sendFile(path.join(__dirname + "/build/index.html"));
 });
 
 app.listen(process.env.PORT || 5000, () => {
