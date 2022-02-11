@@ -8,11 +8,9 @@ const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const userRoute = require("./routes/user");
 
-// const path = require("path");
-// app.use(express.static("./build/"));
-// app.get("/*", function (req, res) {
-//   res.sendFile(path.join(__dirname + "/build/index.html"));
-// });
+const path = require("path");
+app.use(express.static("./build/"));
+
 
 dotenv.config();
 app.use(express.json());
@@ -25,6 +23,10 @@ app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 app.use("/api/user", userRoute);
+
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname + "/build/index.html"));
+});
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend is running");
