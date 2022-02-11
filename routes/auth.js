@@ -38,7 +38,7 @@ router.post("/login", async (req, res) => {
       //token generation
       jwt.sign(
         { email: user.email, id: user._id },
-        process.env.JWT_SECRET_KEY,
+        "ictacademy",
         { expiresIn: "1d" },
         (err, token) => {
           if (err) {

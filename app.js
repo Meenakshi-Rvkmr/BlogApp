@@ -7,17 +7,20 @@ const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const userRoute = require("./routes/user");
+const cors = require("cors");
 
 const path = require("path");
 app.use(express.static("./build/"));
 
-
+const MONGO_URL = "mongodb+srv://meenakshi:qazWSX123@cluster0.llhoa.mongodb.net/blog?retryWrites=true&w=majority"
 dotenv.config();
 app.use(express.json());
-
-mongoose.connect(process.env.MONGO_URL, {
+app.use(cors())
+mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
 });
+
+
 
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);

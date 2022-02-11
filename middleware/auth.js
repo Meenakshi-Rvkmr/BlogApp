@@ -11,8 +11,8 @@ function auth(req, res, next) {
     try {
       //verify token
       console.log(token);
-      console.log(process.env.JWT_SECRET_KEY);
-      let data = jwt.verify(token, process.env.JWT_SECRET_KEY+"");
+      console.log("process.env.JWT_SECRET_KEY");
+      let data = jwt.verify(token, "ictacademy");
       console.log(data,"data")
       req.user = data;
         next();
